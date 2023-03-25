@@ -5,3 +5,26 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+.horizontal-scrollable > .row {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.horizontal-scrollable > .row > .col-xs-4 {
+  display: inline-flex;
+}
+
+li * {
+  text-decoration: none;
+}
+
+.star_wars,
+.star_wars:link {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  text-decoration: none;
+}
+
+.card-img {
+  height: 300px;
+}

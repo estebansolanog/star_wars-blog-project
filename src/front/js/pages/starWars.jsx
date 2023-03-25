@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
 import CardPeople from "../component/cardPeople.jsx";
 import CardPlanet from "../component/cardPlanet.jsx";
-import { todoActions } from "../store/todos";
+import CardVehicle from "../component/cardVehicle.jsx";
+import "../../styles/home.css";
 //React parallax
 
 const StarWars = () => {
@@ -74,33 +74,44 @@ const StarWars = () => {
     useEffect(() => { }, [listVehicles])
 
     return (<>
-        Soy el componente de Star wars
-
-
-        <div>
-            <ul>
+        <div className="container-fluid horizontal-scrollable mx-4">
+            <h1 className="text-danger">Characters</h1>
+            <ul className="row">
                 {listPeople && listPeople.length > 0 ?
                     <>
                         {listPeople.map((item, index) => {
-                            return <li key={item.uid}>
+                            return <li className="col-xs-4 m-2 flex-shrink-1" key={item.uid}>
                                 <CardPeople name={item.name} uid={item.uid} />
                             </li>
                         })}
                     </> : <></>}
             </ul>
-        </div>
-        <br />
-        <div>
-            <ul>
+
+            <h1 className="text-danger">Planets</h1>
+            <ul className="row">
                 {listPlanets && listPlanets.length > 0 ?
                     <>
                         {listPlanets.map((item, index) => {
-                            return <li key={item.uid}>
+                            return <li className="col-xs-4 m-2 flex-shrink-1" key={item.uid}>
                                 <CardPlanet name={item.name} uid={item.uid} />
                             </li>
                         })}
                     </> : <></>}
             </ul>
+
+            <h1 className="text-danger">Vehicles</h1>
+            <ul className="row">
+                {listVehicles && listVehicles.length > 0 ?
+                    <>
+                        {listVehicles.map((item, index) => {
+                            return <li className="col-xs-4 m-2 flex-shrink-1" key={item.uid}>
+                                <CardVehicle name={item.name} uid={item.uid} />
+                            </li>
+                        })}
+                    </> : <></>}
+            </ul>
+
+
         </div>
 
 
